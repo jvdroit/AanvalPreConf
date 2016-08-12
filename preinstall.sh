@@ -49,8 +49,8 @@ mkdir /etc/snort/
 cp /snort_scr/snort-2.9.8.3/etc/*.* /etc/snort/
 cd /etc/snort/
 cp /etc/snort/etc/sid-msg.map /etc/snort/
-wget https://www.snort.org/rules/snortrules-snapshot-2982.tar.gz?oinkcode=1b45c37f5e224167b8ff5635285b7591103e4c01t
-tar -zxvf snortrules-snapshot-2982.tar.gz\?oinkcode\=1b45c37f5e224167b8ff5635285b7591103e4c01
+wget https://www.snort.org/rules/snortrules-snapshot-2982.tar.gz?oinkcode=ec6efc2e580ddc8aee6817ed9ddf3a234b7537f6
+tar -zxvf snortrules-snapshot-2982.tar.gz\?oinkcode\=ec6efc2e580ddc8aee6817ed9ddf3a234b7537f6
 
 # Make requed files for Snort
 
