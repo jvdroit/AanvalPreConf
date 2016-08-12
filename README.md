@@ -1,5 +1,5 @@
-# isn
-IPS based on Snort and Aanval on CentOS7
+# CentOS 7 + Aanval + Snort + Barnyard2 = IPS
+IPS autoinstall script
 
 # preinstall.sh
 
