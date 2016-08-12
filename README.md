@@ -3,9 +3,9 @@ IPS based on Snort and Aanval on CentOS7
 
 # preinstall.sh
 
-disable SElinux
-disable Firewall
-Install requed software
++disable SElinux
++disable Firewall
++Install requed software
 Update and upgrade software
 Make root/snort_scr directory and download snort and DAQ source
 Compile DAQ with nfqueue
