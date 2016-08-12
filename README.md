@@ -32,10 +32,10 @@ IPS autoinstall script
 
 #startup.sh
 
-+ Disable Ipv6
++ Disable IPv6
 + Add bridge and start it up
 + Enable iptables for bridge
-+ Start AAnval BPU and SMT
++ Start Aanval BPU and SMT
 + Start barnyard2
 
 #snort.sh
