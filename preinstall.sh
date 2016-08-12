@@ -12,7 +12,7 @@ systemctl disable firewalld
 
 # Install requed software
 
-yum -y install gcc libdnet-1.12-13.1.el7.x86_64 libdnet-devel.x86_64 flex bison libpcap libpcap-devel libnetfilter_quene libnetfilter_queue-devel.x86_64 pcre.x86_64 pcre.i686 pcre-devel zlib-devel iptables-services httpd mod_ssl php php-common php-gd php-mysql php-xml php-mbstring mariadb mariadb-libs mariadb-server mysql-devel
+yum -y install gcc libdnet-1.12-13.1.el7.x86_64 libdnet-devel.x86_64 flex bison libpcap libpcap-devel libnetfilter_quene libnetfilter_queue-devel.x86_64 pcre.x86_64 pcre.i686 pcre-devel zlib-devel iptables-services httpd mod_ssl php php-common php-gd php-mysql php-xml php-mbstring mariadb mariadb-libs mariadb-server mysql-devel vim wget man make gcc flex bison zlib zlib-devel libpcap libpcap-devel pcre pcre-devel tcpdump gcc-c++ mysql-server mysql mysql-devel libtool perl-libwww-perl perl-Archive-Tar perl-Crypt-SSLeay git gcc libxml2 libxml2-devel libxslt libxslt-devel httpd curl-devel httpd-devel apr-devel apr-util-devel libXrender fontconfig libXext ruby-devel unzip xz
 
 # Update and upgrade software
 
@@ -21,7 +21,7 @@ yum -y upgrade
 
 # Make root/snort_scr directory and download snort and DAQ source
 
-mkdir snort_scr
+mkdir /snort_scr
 cd snort_scr
 wget https://www.snort.org/downloads/snort/snort-2.9.8.3.tar.gz
 tar -zxvf snort-2.9.8.3.tar.gz 
@@ -122,9 +122,9 @@ cp /var/www/html/aanval/contrib/smt2/*.* /smt
 # Download Barnyard2 and install
 
 cd /snort_scr
-wget http://download.aanval.com/barnyard2-1.9.tar.gz
-tar -zxvf barnyard2-1.9.tar.gz
-cd barnyard2-1.9
+git clone https://github.com/firnsy/barnyard2.git
+cd barnyard2/
+./autogen.sh
 ./configure --with-mysql
 make
 make install
@@ -135,11 +135,14 @@ cp ./etc/barnyard2.conf /etc/
 mysqladmin create snort
 mysql snort < ./schemas/create_mysql
 
-# Add scripts to crontab
+# Add scripts to crontab and copy
 
 crontab -l | { cat; echo "*/10 * * * * /root/sql.sh > /dev/null 2>&1"; } | crontab -
 crontab -l | { cat; echo "@reboot /root/startup.sh > /dev/null 2>&1"; } | crontab -
 crontab -l | { cat; echo "@reboot /root/snort.sh > /dev/null 2>&1"; } | crontab -
+cp *.sh /root
+
+# Make it executable
 
 chmod +x /root/*.sh
 
