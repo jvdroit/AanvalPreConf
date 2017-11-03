@@ -107,7 +107,7 @@ tar -zxvf aanval-8-latest-stable.tar.gz
 # Edit php.ini - timezone and max_upload_size
 
 sed -i '/;date.timezone =/s/;date.timezone =/date.timezone = Europe\/Paris/g' /etc/php.ini
-echo 'Need icrease MAX_UPLOAD_SIZE in PHP.INI'
+echo 'Need increase MAX_UPLOAD_SIZE in PHP.INI'
 
 # Start apache
 
