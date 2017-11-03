@@ -125,7 +125,7 @@ cd /snort_scr
 git clone https://github.com/firnsy/barnyard2.git
 cd barnyard2/
 ./autogen.sh
-./configure --with-mysql
+./configure --with-mysql-libraries=/usr/lib64/mysql/
 make
 make install
 cp ./etc/barnyard2.conf /etc/
