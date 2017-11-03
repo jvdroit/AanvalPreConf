@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+#  Centos 7 tested
+#
+#   Modified 03/11/2017
+#########################################################################
 
 # disable SElinux
 
@@ -23,7 +28,7 @@ yum -y upgrade
 
 mkdir /snort_scr
 cd snort_scr
-wget https://www.snort.org/downloads/snort/snort-2.9.8.3.tar.gz
+wget https://www.snort.org/downloads/archive/snort/snort-2.9.9.0.tar.gz
 tar -zxvf snort-2.9.8.3.tar.gz 
 wget https://www.snort.org/downloads/snort/daq-2.0.6.tar.gz
 tar -zxvf daq-2.0.6.tar.gz
@@ -37,8 +42,7 @@ make install
 
 # Compile Snort
 
-cd ..
-cd snort-2.9.8.3/
+cd ../snort-2.2.9.9.0
 ./configure
 make
 make install
