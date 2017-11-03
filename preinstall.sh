@@ -17,7 +17,7 @@ systemctl disable firewalld
 
 # Install requed software
 
-yum -y install htop bridge-utils net-tools gcc libdnet-1.12-13.1.el7.x86_64 libdnet-devel.x86_64 flex bison libpcap libpcap-devel libnetfilter_quene libnetfilter_queue-devel.x86_64 pcre.x86_64 pcre.i686 pcre-devel zlib-devel iptables-services httpd mod_ssl php php-common php-gd php-mysql php-xml php-mbstring mariadb mariadb-libs mariadb-server mysql-devel vim wget man make gcc flex bison zlib zlib-devel libpcap libpcap-devel pcre pcre-devel tcpdump gcc-c++ mysql-server mysql mysql-devel libtool perl-libwww-perl perl-Archive-Tar perl-Crypt-SSLeay git gcc libxml2 libxml2-devel libxslt libxslt-devel httpd curl-devel httpd-devel apr-devel apr-util-devel libXrender fontconfig libXext ruby-devel unzip xz
+yum -y install php-xml php-pdo php-mysql php-dom htop bridge-utils net-tools gcc libdnet-1.12-13.1.el7.x86_64 libdnet-devel.x86_64 flex bison libpcap libpcap-devel libnetfilter_quene libnetfilter_queue-devel.x86_64 pcre.x86_64 pcre.i686 pcre-devel zlib-devel iptables-services httpd mod_ssl php php-common php-gd php-mysql php-xml php-mbstring mariadb mariadb-libs mariadb-server mysql-devel vim wget man make gcc flex bison zlib zlib-devel libpcap libpcap-devel pcre pcre-devel tcpdump gcc-c++ mysql-server mysql mysql-devel libtool perl-libwww-perl perl-Archive-Tar perl-Crypt-SSLeay git gcc libxml2 libxml2-devel libxslt libxslt-devel httpd curl-devel httpd-devel apr-devel apr-util-devel libXrender fontconfig libXext ruby-devel unzip xz
 
 # Update and upgrade software
 
