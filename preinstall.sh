@@ -50,7 +50,7 @@ make install
 # Make directory for Snort, copy files, download and unzip rules
 
 mkdir /etc/snort/
-cp /snort_scr/snort-2.9.8.3/etc/*.* /etc/snort/
+cp /snort_scr/snort-2.9.9.0/etc/*.* /etc/snort/
 cd /etc/snort/
 cp /etc/snort/etc/sid-msg.map /etc/snort/
 wget https://www.snort.org/rules/snortrules-snapshot-2982.tar.gz?oinkcode=ec6efc2e580ddc8aee6817ed9ddf3a234b7537f6
@@ -80,10 +80,10 @@ sed -i '/# config daq_var: <var>/s/# config daq_var: <var>/config daq_var: queue
 iptables -I FORWARD -j NFQUEUE --queue-num 0
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 brctl addbr br0
-brctl addif br0 ens192 ens224
+brctl addif br0 ens160 ens192
 sysctl -w net.bridge.bridge-nf-call-iptables=1
 ifconfig ens192 up
-ifconfig ens224 up
+ifconfig ens160 up
 ifconfig br0 up
 service iptables save
 
