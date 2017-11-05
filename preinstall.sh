@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  Centos 7 tested
+#  Centos 7 tested and not working !!!
 #
 #   Modified 03/11/2017
 #########################################################################
@@ -19,7 +19,7 @@ systemctl disable firewalld
 
 #yum -y install wget php-xml php-pdo php-mysql php-dom htop bridge-utils net-tools gcc libdnet libdnet-devel flex bison libpcap libpcap-devel libnetfilter_quene libnetfilter_queue-devel.x86_64 pcre.x86_64 pcre.i686 pcre-devel zlib-devel iptables-services httpd mod_ssl php php-common php-gd php-mysql php-xml php-mbstring mariadb mariadb-libs mariadb-server mysql-devel vim wget man make gcc flex bison zlib zlib-devel libpcap libpcap-devel pcre pcre-devel tcpdump gcc-c++ mysql-server mysql mysql-devel libtool perl-libwww-perl perl-Archive-Tar perl-Crypt-SSLeay git gcc libxml2 libxml2-devel libxslt libxslt-devel httpd curl-devel httpd-devel apr-devel apr-util-devel libXrender fontconfig libXext ruby-devel unzip xz
 
-yum -y install wget php-xml php-pdo php-mysql php-dom htop bridge-utils net-tools flex bison libpcap libpcap-devel libnetfilter_quene zlib-devel iptables-services httpd mod_ssl php php-common mariadb mariadb-libs mariadb-server man make tcpdump perl-libwww-perl perl-Archive-Tar perl-Crypt-SSLeay httpd curl unzip xz
+yum -y install libdnet-devel wget gcc php-xml php-pdo php-mysql php-dom htop bridge-utils net-tools flex bison libpcap libpcap-devel libnetfilter_quene zlib-devel iptables-services httpd mod_ssl php php-common mariadb mariadb-libs libtool mpcre-devel mariadb-server man make tcpdump perl-libwww-perl perl-Archive-Tar perl-Crypt-SSLeay httpd curl unzip xz
 
 echo "Appuyer sur Entrée pour continuer..."
 read a
@@ -32,11 +32,11 @@ read a
 # Make root/snort_scr directory and download snort and DAQ source
 
 mkdir /snort_scr
-cd snort_scr
+cd /snort_scr
 wget https://www.snort.org/downloads/archive/snort/snort-2.9.9.0.tar.gz
 echo "Appuyer sur Entrée pour continuer..."
 read a
-tar -zxvf snort-2.9.8.3.tar.gz 
+tar -zxvf snort-2.9.9.0.tar.gz 
 wget https://www.snort.org/downloads/snort/daq-2.0.6.tar.gz
 echo "Appuyer sur Entrée pour continuer..."
 read a
@@ -52,7 +52,7 @@ echo "Appuyer sur Entrée pour continuer..."
 read a
 #######################################
 # Compile Snort
-cd ../snort-2.2.9.9.0
+cd ../snort-2.9.9.0
 ./configure
 make
 make install
